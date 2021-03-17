@@ -1,0 +1,20 @@
+#!/bin/sh
+# See LICENSE file for copyright and license details.
+
+usage() {
+	>&2 echo 'usage: wsclean [-d] file1 file2 ...'
+	exit 1
+}
+
+case "$1" in
+	-d) safe=1 ;;
+	-*) usage ;;
+esac
+
+files=$(echo "$@" | sed -E 's/-.[[:space:]]?//g')
+! [ "$files" ] && usage
+
+for file in "$files"; do
+	sed -E 's/[[:space:]]*$//' "$file" > "$file.new"
+	! [ "$safe" ] && mv "$file.new" "$file"
+done
