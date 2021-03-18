@@ -12,7 +12,8 @@ wsclean deletes all trailing whitespace characters that are found immediately
 before a newline character in a file. This is very useful to remove two kinds
 of unnecessary whitespace that may accidentally be left over in code:
 
-1. Whitespace characters in a blank line (e.g. vertical indentation lines).
+1. Whitespace characters left in blank lines (e.g. in vertical indentation 
+lines).
 2. Trailing whitespace at the end of line that is completely meaningless.
 
 wsclean accepts this syntax:
