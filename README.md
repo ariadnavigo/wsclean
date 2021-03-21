@@ -28,5 +28,5 @@ a new clean file with the suffix .new attached to the original filename.
 
 ## License
 
-wsclean is published under an MIT/X11/Expat-type License. See LICENSE file for 
-copyright and license details.
+wsclean is published under an MIT/X11/Expat-type License. See ``LICENSE`` file 
+for copyright and license details.
