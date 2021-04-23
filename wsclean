@@ -18,7 +18,7 @@ shift $((OPTIND - 1))
 files=$(echo "$@" | sed -E 's/-.[[:space:]]?//g')
 ! [ "$files" ] && usage
 
-for file in "$files"; do
+for file in $files; do
 	sed -E 's/[[:space:]]*$//' "$file" > "$file.new"
 	! [ "$safe" ] && mv "$file.new" "$file"
 done
