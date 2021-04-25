@@ -2,7 +2,7 @@
 # See LICENSE file for copyright and license details.
 
 usage() {
-	echo 'usage: wsclean [-d] file1 file2 ...' >&2 
+	echo 'usage: wsclean [-d] file1 file2 ...' >&2
 	exit 1
 }
 
