@@ -15,12 +15,11 @@ done
 
 shift $((OPTIND - 1))
 
-files=$(echo "$@" | sed -E 's/-.[[:space:]]?//g')
-! [ "$files" ] && usage
+! [ "$1" ] && usage
 
 IFS="
 "
-for file in $files; do
+for file in "$@"; do
 	sed -E 's/[[:space:]]*$//' "$file" > "$file.new"
 	! [ "$safe" ] && mv "$file.new" "$file"
 done
