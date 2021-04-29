@@ -19,10 +19,10 @@ lines).
 wsclean accepts this syntax:
 
 ```
-$ wsclean [-d] file1 file2 ...
+$ wsclean [-d] file
 ```
 
-By default, wsclean **overwrites** the files it's told to clean. This behavior
+By default, wsclean **overwrites** the file it's told to clean. This behavior
 can be deactivated by using the -d option: when using -d, wsclean will create
 a new clean file with the suffix .new attached to the original filename.
 
