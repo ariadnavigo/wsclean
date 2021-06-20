@@ -9,7 +9,7 @@ _Clean your files! Save bytes!_
 ## Usage
 
 wsclean deletes all trailing whitespace characters that are found immediately
-before a newline character in a file. This is very useful to remove two kinds
+before a newline character in files. This is very useful to remove two kinds
 of unnecessary whitespace that may accidentally be left over in code:
 
 1. Whitespace characters left in blank lines (e.g. in vertical indentation 
@@ -19,10 +19,10 @@ lines).
 wsclean accepts this syntax:
 
 ```
-$ wsclean [-d] file
+$ wsclean [-d] file [...]
 ```
 
-By default, wsclean **overwrites** the file it's told to clean. This behavior
+By default, wsclean **overwrites** the files it's told to clean. This behavior
 can be deactivated by using the -d option: when using -d, wsclean will create
 a new clean file with the suffix .new attached to the original filename.
 
