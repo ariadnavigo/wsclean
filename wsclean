@@ -17,11 +17,15 @@ done
 
 shift $((OPTIND - 1))
 
-! [ "$1" ] && usage
+if [ -z "$1" ]; then 
+	usage
+fi
 
 for file in "$@"; do
 	sed -E 's/[[:space:]]*$//' "$file" > "$file.new"
-	! [ "$safe" ] && mv "$file.new" "$file"
+	if [ -z "$safe" ]; then
+		mv "$file.new" "$file"
+	fi
 done
 
 exit 0
