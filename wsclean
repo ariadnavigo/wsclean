@@ -27,5 +27,3 @@ for file in "$@"; do
 		mv "$file.new" "$file"
 	fi
 done
-
-exit 0
