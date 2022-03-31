@@ -22,6 +22,10 @@ if [ -z "$1" ]; then
 fi
 
 for file in "$@"; do
+	if ! [ -f "$file" ]; then
+		echo "W: file $file does not exist. Skipping." >&2
+		continue
+	fi
 	sed -E 's/[[:space:]]*$//' "$file" > "$file.new"
 	if [ -z "$safe" ]; then
 		mv "$file.new" "$file"
