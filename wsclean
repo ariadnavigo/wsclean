@@ -1,0 +1,38 @@
+#!/bin/sh
+# See LICENSE file for copyright and license details.
+
+set -e
+
+usage() {
+	echo 'usage: wsclean [-i] FILE' >&2
+	exit 1
+}
+
+delblank() {
+	sed -E 's/[[:blank:]]*$//' "$1"
+}
+
+while getopts :i opt
+do
+	case $opt in
+	i) inplace=1;;
+	?) usage;;
+	esac
+done
+shift $((OPTIND - 1))
+
+if ! [ "$1" ]; then
+	usage
+fi
+
+if ! [ "$inplace" ]; then
+	delblank "$1"
+else
+	# For the destructive mode of operation we're *not* using `sed -i' on
+	# purpose to keep this script strictly POSIX compliant. `sed -i' is not
+	# POSIX, even if it's a widespread extension.
+	
+	cp "$1" "$1.wsclean"
+	delblank "$1.wsclean" > "$1"
+	rm "$1.wsclean"
+fi
