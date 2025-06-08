@@ -20,5 +20,3 @@ folder in the user's ``$PATH``.
 
 wsclean is licensed under the MIT License. See LICENSE file for copyright and 
 license details.
-
-[ml]: https://lists.sr.ht/~ariadna_vigo/public-inbox
