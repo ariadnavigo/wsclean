@@ -18,5 +18,5 @@ folder in the user's ``$PATH``.
 
 ## License
 
-wsclean is licensed under the MIT License. See LICENSE file for copyright and 
+wsclean is licensed under the MIT License. See LICENSE file for copyright and
 license details.
