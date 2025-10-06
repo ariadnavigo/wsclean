@@ -14,25 +14,26 @@ delblank() {
 
 while getopts :i opt
 do
-	case $opt in
+	case ${opt} in
 	i) inplace=1;;
 	?) usage;;
+	*) exit 127;;
 	esac
 done
 shift $((OPTIND - 1))
 
-if ! [ "$1" ]; then
+if [ -z "${1}" ]; then
 	usage
 fi
 
-if ! [ "$inplace" ]; then
-	delblank "$1"
+if [ -z "${inplace}" ]; then
+	delblank "${1}"
 else
 	# For the destructive mode of operation we're *not* using `sed -i' on
 	# purpose to keep this script strictly POSIX compliant. `sed -i' is not
 	# POSIX, even if it's a widespread extension.
 	
-	cp "$1" "$1.wsclean"
-	delblank "$1.wsclean" > "$1"
-	rm "$1.wsclean"
+	cp "${1}" "${1}.wsclean"
+	delblank "${1}.wsclean" > "${1}"
+	rm "${1}.wsclean"
 fi
