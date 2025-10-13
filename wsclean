@@ -4,36 +4,36 @@
 set -e
 
 usage() {
-	echo 'usage: wsclean [-i] FILE' >&2
-	exit 1
+    echo 'usage: wsclean [-i] FILE' >&2
+    exit 1
 }
 
 delblank() {
-	sed -E 's/[[:blank:]]*$//' "$1"
+    sed -E 's/[[:blank:]]*$//' "$1"
 }
 
 while getopts :i opt
 do
-	case ${opt} in
-	i) inplace=1;;
-	?) usage;;
-	*) exit 127;;
-	esac
+    case ${opt} in
+    i) inplace=1;;
+    ?) usage;;
+    *) exit 127;;
+    esac
 done
 shift $((OPTIND - 1))
 
 if [ -z "${1}" ]; then
-	usage
+    usage
 fi
 
 if [ -z "${inplace}" ]; then
-	delblank "${1}"
+    delblank "${1}"
 else
-	# For the destructive mode of operation we're *not* using `sed -i' on
-	# purpose to keep this script strictly POSIX compliant. `sed -i' is not
-	# POSIX, even if it's a widespread extension.
-	
-	cp "${1}" "${1}.wsclean"
-	delblank "${1}.wsclean" > "${1}"
-	rm "${1}.wsclean"
+    # For the destructive mode of operation we're *not* using `sed -i' on
+    # purpose to keep this script strictly POSIX compliant. `sed -i' is not
+    # POSIX, even if it's a widespread extension.
+
+    cp "${1}" "${1}.wsclean"
+    delblank "${1}.wsclean" > "${1}"
+    rm "${1}.wsclean"
 fi
