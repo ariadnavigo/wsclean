@@ -15,9 +15,9 @@ delblank() {
 while getopts :i opt
 do
     case ${opt} in
-    i) inplace=1;;
-    ?) usage;;
-    *) exit 127;;
+        i) inplace=1;;
+        ?) usage;;
+        *) exit 127;;
     esac
 done
 shift $((OPTIND - 1))
