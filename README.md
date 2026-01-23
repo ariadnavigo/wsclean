@@ -5,7 +5,7 @@ from a text file.
 
 ## Usage
 
-```shell
+```
 $ wsclean [-i] FILE
 ```
 
