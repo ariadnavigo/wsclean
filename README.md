@@ -5,9 +5,7 @@ from a text file.
 
 ## Usage
 
-```
-$ wsclean [-i] FILE
-```
+``$ wsclean [-i] FILE``
 
 By default, wsclean works in a non-destructive way; i.e., by printing the
 cleaned version of ``FILE`` to standard output. However, with the ``-i`` flag
@@ -21,7 +19,7 @@ folder in the user's ``$PATH``.
 Patches and discussion are welcome at [my catch-all mailing list][pubinb-ml].
 If you are not familiar with the Git email patch workflow,
 [git-send-email.io][git-mail-web] is a great resource that walks you through the
-basics. 
+basics.
 
 ## License
 
