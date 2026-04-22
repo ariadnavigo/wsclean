@@ -5,7 +5,9 @@ from a text file.
 
 ## Usage
 
-``$ wsclean [-i] FILE``
+```shell-session
+wsclean [-i] FILE
+```
 
 By default, wsclean works in a non-destructive way; i.e., by printing the
 cleaned version of ``FILE`` to standard output. However, with the ``-i`` flag
